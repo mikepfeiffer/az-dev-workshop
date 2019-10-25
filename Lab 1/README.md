@@ -1,4 +1,4 @@
-# Lab 1 - Azure Subscription and Developer Workstation Setup
+# Lab 1 - Azure Developer Workstation Setup
 
 ***Note: This lab can be performed on your local machine if you do not want to create an Azure VM and have full rights to install your own software***
 
