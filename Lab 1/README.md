@@ -12,6 +12,7 @@
 7. Enable Azure CLI interactive mode using the **az interactive** command
 8. Use the **az find** command to search for CLI hints (e.g. "az find account")
 9. Use the Azure CLI to list your subcription id(s)
+10. Challenge: Use the CLI with the --Query parameter to return only the display names for the valid Azure regions available to your account
 
 ### Lifelines:
 
