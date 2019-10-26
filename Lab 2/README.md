@@ -10,7 +10,8 @@
 * In the Advanced settings section, set Logout URL to `https://localhost:44321/signout-oidc`.
 * Under Implicit grant, check ID tokens.
 * Select Save.
-7. Run the application to validate that it works
+7. Download and configure your ASP.NET Core app following steps 2 and 3 from the official [quickstart](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-aspnet-core-webapp) guide.
+8. Run the application to validate that it works.
 
 
 ### Lifelines:
