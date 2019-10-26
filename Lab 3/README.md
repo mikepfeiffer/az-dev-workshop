@@ -6,6 +6,8 @@
  * Value = #000000;
 3. Use the .NET CLI to create a new ASP.NET Core web app `dotnet new webapp`
 4. Next, use the .NET Core User Secrets tool to store the connection string for our new App Configuration service `dotnet user-secrets set ConnectionStrings:AppConfig <YOUR CONNECTION STRING>` (note: you can find your connection string in the Access Keys setting section of your App Configuration resource)
+Add this to your .csproj file:
+*** <UserSecretsId>79a3edd0-2092-40a2-a04d-dcb46d5ca9ed</UserSecretsId> ***
 4. Add a reference to the AzureAppConfiguration provider for .NET Core `dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-007830001`
 5. Update your program.cs file as shown in step 5 of [this quickstart](https://docs.microsoft.com/en-us/azure/azure-app-configuration/quickstart-aspnet-core-app#connect-to-an-app-configuration-store)
 6. Update your index.cshtml page as shown in step 6 of [this quickstart](https://docs.microsoft.com/en-us/azure/azure-app-configuration/quickstart-aspnet-core-app#connect-to-an-app-configuration-store) to retrieve the value of **BackgroundColor** key. Use this value to override the background color of the page.
