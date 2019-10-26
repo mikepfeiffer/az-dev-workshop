@@ -1,27 +1,19 @@
-# Lab 5 - Blue-green Deployments with Azure Web Apps and Deployment Slots
+# Lab 5 - Deploy a Load Balancer on Azure
 
-Deploy a Web App to Azure:
-
-1. Create a new App Service in the Azure Portal (Web App) Make sure to select at least a Standard tier App Service Plan
-2. Use the App Service Editor to customize the main home page and add the following code to the body of the page:
-```
-<h1>This is version 1.0.0 of the web app</h1>
-```
-3. Navigate to the url for your web app to confirm the changes
-
-Create a "Dev" Deployment Slot
-
-1. In the portal, create a deployment slot in your Web App called "dev"
-2. Use the App Service Editor to customize the main home page of the dev web app and add the following code to the body of the page:
-```
-<h1>This is version 1.0.1 of the web app</h1>
-```
-3. After you confirm you have two different versions of your Web App running in the prod and dev deployment slots (they have different urls), perform a deployment slot swap in the portal.  Swap using the "dev" site as the source to destination "production". This simulates moving a new version of your app into production
-4. Navigate to the production url to confirm the new version of the app is running there
+1. Launch the load balancer ARM template from [here](https://github.com/AzureInterface/quickstart/tree/master/azure-load-balancer) Note: The VM types in the template may not be available in your Azure Pass. You can edit the template during launch to use the Standard_B2s VM size.
+2. Verify you can connect remotely via NAT rules
+3. Set up a basic web server / web page on each VM
+4. Create a HTTP probe for the load balancer
+5. Create a load balancer rule for HTTP
+6. Verify you can visit your website through the load balancer
+7. Verify your load balanced site still works after killing one of the web servers
+8. Delete the resource group from your Azure Pass subscription when complete
 
 ### Lifelines:
 
-* [Set up staging environments in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-staged-publishing)
+* [Azure Load Balancer overview](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview)
+
+* [Creating an Internet-facing load balancer using the Azure portal](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-get-started-internet-portal)
 
 ### Navigation:
 

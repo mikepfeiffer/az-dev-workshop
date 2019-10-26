@@ -1,19 +1,17 @@
-# Lab 4 - Deploy a Load Balancer on Azure
+# Lab 4 - API Throttling with Azure API Management and Azure Functions
 
-1. Launch the load balancer ARM template from [here](https://github.com/AzureInterface/quickstart/tree/master/azure-load-balancer) Note: The VM types in the template may not be available in your Azure Pass. You can edit the template during launch to use the Standard_B2s VM size.
-2. Verify you can connect remotely via NAT rules
-3. Set up a basic web server / web page on each VM
-4. Create a HTTP probe for the load balancer
-5. Create a load balancer rule for HTTP
-6. Verify you can visit your website through the load balancer
-7. Verify your load balanced site still works after killing one of the web servers
-8. Delete the resource group from your Azure Pass subscription when complete
+1. Create a new Azure API Management service instance in the Azure portal.
+2. Create a new Azure Function App in the Azure portal.
+3. Create a new function inside your function app. Use the default Webhook Http Trigger template.
+4. Create a new API in your Azure API Management instance.
+5. Configure an API operation and setup rate limiting based on inbound processing.
+6. Use the API Management portal to test your API operation to invoke the backend function. Ensure that your rate limiting policy is being applied.
 
 ### Lifelines:
 
-* [Azure Load Balancer overview](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview)
+* [Create a new Azure API Management service instance](https://docs.microsoft.com/bs-cyrl-ba/Azure/api-management/get-started-create-service-instance)
 
-* [Creating an Internet-facing load balancer using the Azure portal](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-get-started-internet-portal)
+* [API Management access restriction policies](https://docs.microsoft.com/bs-cyrl-ba/Azure/api-management/api-management-access-restriction-policies#LimitCallRate)
 
 ### Navigation:
 
