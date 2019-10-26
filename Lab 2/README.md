@@ -10,6 +10,7 @@
 * In the Advanced settings section, set Logout URL to `https://localhost:44321/signout-oidc`.
 * Under Implicit grant, check ID tokens.
 * Select Save.
+7. Run the application to validate that it works
 
 
 ### Lifelines:
