@@ -1,4 +1,4 @@
-# Lab 3 - XXXXXXXXXX
+# Lab 3 - Use Key Vault References in an ASP.NET Core App
 
 1. Step one
 2. Step two
