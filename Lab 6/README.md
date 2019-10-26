@@ -1,28 +1,33 @@
-# Lab 6 - Blue-green Deployments with Azure Web Apps and Deployment Slots
+# Lab 6 - Geo-route incoming traffic to your Azure Web App
 
-Deploy a Web App to Azure:
+Create two Azure Web Apps:
 
-1. Create a new App Service in the Azure Portal (Web App) Make sure to select at least a Standard tier App Service Plan
-2. Use the App Service Editor to customize the main home page and add the following code to the body of the page:
-```
-<h1>This is version 1.0.0 of the web app</h1>
-```
-3. Navigate to the url for your web app to confirm the changes
+* Create a new resource group
+* Add a new Web App to the resource group in West US. Name the app so you can tell where its provisioned (e.g. WebAppWest)
+* Add a new Web App to the resource group in East US. Name the app so you can tell where its provisioned (e.g. WebAppEast)
 
-Create a "Dev" Deployment Slot
+Do this for each Web App:
 
-1. In the portal, create a deployment slot in your Web App called "dev"
-2. Use the App Service Editor to customize the main home page of the dev web app and add the following code to the body of the page:
-```
-<h1>This is version 1.0.1 of the web app</h1>
-```
-3. After you confirm you have two different versions of your Web App running in the prod and dev deployment slots (they have different urls), perform a deployment slot swap in the portal.  Swap using the "dev" site as the source to destination "production". This simulates moving a new version of your app into production
-4. Navigate to the production url to confirm the new version of the app is running there
+1. Navigate to the web app in the Azure Portal
+2. Open the App Service Editor for the web app
+3. Add a message to the body of the hostingstart.html page that displays the Azure region (either east or west)
+4. Visit to your Web App using the public URL (you can get this in the portal) and ensure you see your webpage with the correct region listed on the page
 
-### Lifelines:
+Create a Traffic Manager Profile:
 
-* [Set up staging environments in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-staged-publishing)
+1. In the portal, search for Traffic Manager profile
+2. Create a new profile for your Web Apps and ensure the routing method is set to "performance"
+3. Add external endpoints for both the west and east Web Apps. Make sure to add them as "Azure" endpoints instead of external
+4. Visit your traffic manager URL to view the Web App. Did it route you to the correct location? If not, you may need to flush your local DNS cache.
+5. Delete all resource groups from your Azure Pass subscription when complete
 
-### Navigation:
+### Lifelines
 
-* [Back to Lab Index](https://github.com/mikepfeiffer/az-dev-workshop)
+Overview of Traffic Manager
+* https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview
+
+Create a Traffic Manager profile
+* https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-create-profile
+
+Configure the performance traffic routing method
+* https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-configure-performance-routing-method
