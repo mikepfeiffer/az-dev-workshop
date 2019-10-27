@@ -8,7 +8,8 @@
 6. Replace the code in Program.cs with the code [in this GitHub Gist](https://gist.github.com/mikepfeiffer/1d1d04f014b9929be7fcbc3382bb78a1)
 6. Build your project using the `dotnet build` command
 7. Switch to the build output folder `cd bin/Debug/netcoreapp3.0`
-8. Run the console application using the following syntax: `dotnet SBConsole.dll -ConnectionString "myConnectionString" -QueueName "myQueueName"` to add messages to your Service Bus Queue to verify everything works
+8. Run the console application using the following syntax: `dotnet SBConsole.dll -ConnectionString "myConnectionString" -QueueName "myQueueName"` to add messages to your Service Bus Queue (note: you can get the connection string for your Service Bus resource in the Azure portal)
+9. Verify that the messages were sent by viewing the queue in the portal
 9. Create an Azure Function app
 10. Create a new Function in your Function app using the "Azure Service Bus Queue trigger" template
 11. Navigate to the properties of your Function and open the log-streaming service window
